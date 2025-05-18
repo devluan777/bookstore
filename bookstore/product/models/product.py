@@ -1,10 +1,6 @@
-
 from django.db import models
 
-from .category import Category
-
-
-
+from product.models import Category
 
 
 class Product(models.Model):
@@ -15,3 +11,5 @@ class Product(models.Model):
     category = models.ManyToManyField(Category, blank=True)
 
 
+    def __str__(self):
+        return self.title
