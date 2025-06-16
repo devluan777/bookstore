@@ -9,5 +9,3 @@ class ProductViewSet(ModelViewSet):
 
     def get_queryset(self):
         return Product.objects.all().order_by("id")
-
-        
