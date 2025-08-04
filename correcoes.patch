@@ -1,0 +1,1174 @@
+diff --git a/bookstore/.gitignore b/bookstore/.gitignore
+deleted file mode 100644
+index 15201ac..0000000
+--- a/bookstore/.gitignore
++++ /dev/null
+@@ -1,171 +0,0 @@
+-# Byte-compiled / optimized / DLL files
+-__pycache__/
+-*.py[cod]
+-*$py.class
+-
+-# C extensions
+-*.so
+-
+-# Distribution / packaging
+-.Python
+-build/
+-develop-eggs/
+-dist/
+-downloads/
+-eggs/
+-.eggs/
+-lib/
+-lib64/
+-parts/
+-sdist/
+-var/
+-wheels/
+-share/python-wheels/
+-*.egg-info/
+-.installed.cfg
+-*.egg
+-MANIFEST
+-
+-# PyInstaller
+-#  Usually these files are written by a python script from a template
+-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+-*.manifest
+-*.spec
+-
+-# Installer logs
+-pip-log.txt
+-pip-delete-this-directory.txt
+-
+-# Unit test / coverage reports
+-htmlcov/
+-.tox/
+-.nox/
+-.coverage
+-.coverage.*
+-.cache
+-nosetests.xml
+-coverage.xml
+-*.cover
+-*.py,cover
+-.hypothesis/
+-.pytest_cache/
+-cover/
+-
+-# Translations
+-*.mo
+-*.pot
+-
+-# Django stuff:
+-*.log
+-local_settings.py
+-db.sqlite3
+-db.sqlite3-journal
+-
+-# Flask stuff:
+-instance/
+-.webassets-cache
+-
+-# Scrapy stuff:
+-.scrapy
+-
+-# Sphinx documentation
+-docs/_build/
+-
+-# PyBuilder
+-.pybuilder/
+-target/
+-
+-# Jupyter Notebook
+-.ipynb_checkpoints
+-
+-# IPython
+-profile_default/
+-ipython_config.py
+-
+-# pyenv
+-#   For a library or package, you might want to ignore these files since the code is
+-#   intended to run in multiple environments; otherwise, check them in:
+-# .python-version
+-
+-# pipenv
+-#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
+-#   However, in case of collaboration, if having platform-specific dependencies or dependencies
+-#   having no cross-platform support, pipenv may install dependencies that don't work, or not
+-#   install all needed dependencies.
+-#Pipfile.lock
+-
+-# UV
+-#   Similar to Pipfile.lock, it is generally recommended to include uv.lock in version control.
+-#   This is especially recommended for binary packages to ensure reproducibility, and is more
+-#   commonly ignored for libraries.
+-#uv.lock
+-
+-# poetry
+-#   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
+-#   This is especially recommended for binary packages to ensure reproducibility, and is more
+-#   commonly ignored for libraries.
+-#   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
+-#poetry.lock
+-
+-# pdm
+-#   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
+-#pdm.lock
+-#   pdm stores project-wide configurations in .pdm.toml, but it is recommended to not include it
+-#   in version control.
+-#   https://pdm.fming.dev/latest/usage/project/#working-with-version-control
+-.pdm.toml
+-.pdm-python
+-.pdm-build/
+-
+-# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
+-__pypackages__/
+-
+-# Celery stuff
+-celerybeat-schedule
+-celerybeat.pid
+-
+-# SageMath parsed files
+-*.sage.py
+-
+-# Environments
+-.env
+-.venv
+-env/
+-venv/
+-ENV/
+-env.bak/
+-venv.bak/
+-
+-# Spyder project settings
+-.spyderproject
+-.spyproject
+-
+-# Rope project settings
+-.ropeproject
+-
+-# mkdocs documentation
+-/site
+-
+-# mypy
+-.mypy_cache/
+-.dmypy.json
+-dmypy.json
+-
+-# Pyre type checker
+-.pyre/
+-
+-# pytype static type analyzer
+-.pytype/
+-
+-# Cython debug symbols
+-cython_debug/
+-
+-# PyCharm
+-#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
+-#  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
+-#  and can be added to the global gitignore or merged into this file.  For a more nuclear
+-#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
+-#.idea/
+-
+-# PyPI configuration file
+-.pypirc
+diff --git a/bookstore/README.md b/bookstore/README.md
+deleted file mode 100644
+index 2f6d0ef..0000000
+--- a/bookstore/README.md
++++ /dev/null
+@@ -1,2 +0,0 @@
+-# Bookstore Project
+-Este é o projeto de gerenciamento da livraria.
+diff --git a/bookstore/__init__.py b/bookstore/__init__.py
+index 8b13789..e69de29 100644
+--- a/bookstore/__init__.py
++++ b/bookstore/__init__.py
+@@ -1 +0,0 @@
+-
+diff --git a/bookstore/asgi.py b/bookstore/asgi.py
+deleted file mode 100644
+index cc23248..0000000
+--- a/bookstore/asgi.py
++++ /dev/null
+@@ -1,16 +0,0 @@
+-"""
+-ASGI config for bookstoreapp project.
+-
+-It exposes the ASGI callable as a module-level variable named ``application``.
+-
+-For more information on this file, see
+-https://docs.djangoproject.com/en/5.1/howto/deployment/asgi/
+-"""
+-
+-import os
+-
+-from django.core.asgi import get_asgi_application
+-
+-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "bookstoreapp.settings")
+-
+-application = get_asgi_application()
+diff --git a/bookstore/bookstoreapp/__init__.py b/bookstore/bookstoreapp/__init__.py
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/bookstore/bookstoreapp/settings.py b/bookstore/bookstoreapp/settings.py
+index c8a92fe..828f099 100644
+--- a/bookstore/bookstoreapp/settings.py
++++ b/bookstore/bookstoreapp/settings.py
+@@ -31,20 +31,17 @@ ALLOWED_HOSTS = []
+ # Application definition
+ 
+ INSTALLED_APPS = [
+-    'django.contrib.admin',
+-    'django.contrib.auth',
+-    'django.contrib.contenttypes',
+-    'django.contrib.sessions',
+-    'django.contrib.messages',
+-    'django.contrib.staticfiles',
+-    'django_extensions',
+-    'bookstoreapp',
+-    'order',
+-    'product',
++    "django.contrib.admin",
++    "django.contrib.auth",
++    "django.contrib.contenttypes",
++    "django.contrib.sessions",
++    "django.contrib.messages",
++    "django.contrib.staticfiles",
++    "rest_framework",
++    "order",
++    "product",
+ ]
+ 
+-
+-
+ MIDDLEWARE = [
+     "django.middleware.security.SecurityMiddleware",
+     "django.contrib.sessions.middleware.SessionMiddleware",
+diff --git a/bookstore/bookstoreapp/urls.py b/bookstore/bookstoreapp/urls.py
+index 86be91d..791d28c 100644
+--- a/bookstore/bookstoreapp/urls.py
++++ b/bookstore/bookstoreapp/urls.py
+@@ -16,12 +16,8 @@ Including another URLconf
+ """
+ 
+ from django.contrib import admin
+-from django.urls import path, re_path , include
+-
+-
++from django.urls import path
+ 
+ urlpatterns = [
+     path("admin/", admin.site.urls),
+-    re_path(r'bookstore/(?P<version>(v1|v2))/', include('order.urls')),
+-    re_path(r'bookstore/(?P<version>(v1|v2))/', include('product.urls')),
+ ]
+diff --git a/bookstore/bookstoreapp/wsgi.py b/bookstore/bookstoreapp/wsgi.py
+deleted file mode 100644
+index e3ac371..0000000
+--- a/bookstore/bookstoreapp/wsgi.py
++++ /dev/null
+@@ -1,16 +0,0 @@
+-"""
+-WSGI config for bookstoreapp project.
+-
+-It exposes the WSGI callable as a module-level variable named ``application``.
+-
+-For more information on this file, see
+-https://docs.djangoproject.com/en/5.1/howto/deployment/wsgi/
+-"""
+-
+-import os
+-
+-from django.core.wsgi import get_wsgi_application
+-
+-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "bookstoreapp.settings")
+-
+-application = get_wsgi_application()
+diff --git a/bookstore/manage.py b/bookstore/manage.py
+index 7a0c32e..aacdf8d 100644
+--- a/bookstore/manage.py
++++ b/bookstore/manage.py
+@@ -8,7 +8,6 @@ def main():
+     """Run administrative tasks."""
+     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'bookstoreapp.settings')
+ 
+-
+     try:
+         from django.core.management import execute_from_command_line
+     except ImportError as exc:
+diff --git a/bookstore/order/__init__.py b/bookstore/order/__init__.py
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/bookstore/order/admin.py b/bookstore/order/admin.py
+deleted file mode 100644
+index a803fe3..0000000
+--- a/bookstore/order/admin.py
++++ /dev/null
+@@ -1,5 +0,0 @@
+-from django.contrib import admin
+-
+-# Register your models here.
+-
+-from .models import Order
+diff --git a/bookstore/order/apps.py b/bookstore/order/apps.py
+deleted file mode 100644
+index b2f0796..0000000
+--- a/bookstore/order/apps.py
++++ /dev/null
+@@ -1,6 +0,0 @@
+-from django.apps import AppConfig
+-
+-
+-class OrderConfig(AppConfig):
+-    default_auto_field = "django.db.models.BigAutoField"
+-    name = "order"
+diff --git a/bookstore/order/factories.py b/bookstore/order/factories.py
+index 0ebd095..8bfb20d 100644
+--- a/bookstore/order/factories.py
++++ b/bookstore/order/factories.py
+@@ -1,18 +1,16 @@
+ import factory
+-from django.contrib.auth.models import User
+ 
+-from order.models import Order
++from django.contrib.auth.models import User
+ from product.factories import ProductFactory
+-
++from order.models import Order
+ 
+ class UserFactory(factory.django.DjangoModelFactory):
+-    email = factory.Faker("pystr")
+-    username = factory.Faker("pystr")
++    email = factory.Faker('pystr')
++    username = factory.Faker('pystr')
+ 
+     class Meta:
+         model = User
+ 
+-
+ class OrderFactory(factory.django.DjangoModelFactory):
+     user = factory.SubFactory(UserFactory)
+ 
+diff --git a/bookstore/order/migrations/0001_initial.py b/bookstore/order/migrations/0001_initial.py
+index 9d804d5..fd99ed5 100644
+--- a/bookstore/order/migrations/0001_initial.py
++++ b/bookstore/order/migrations/0001_initial.py
+@@ -1,4 +1,4 @@
+-# Generated by Django 5.1.7 on 2025-04-23 03:03
++# Generated by Django 5.1.7 on 2025-03-12 01:27
+ 
+ import django.db.models.deletion
+ from django.conf import settings
+diff --git a/bookstore/order/migrations/__init__.py b/bookstore/order/migrations/__init__.py
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/bookstore/order/models/__init__.py b/bookstore/order/models/__init__.py
+deleted file mode 100644
+index 0065b08..0000000
+--- a/bookstore/order/models/__init__.py
++++ /dev/null
+@@ -1 +0,0 @@
+-from .order import Order
+\ No newline at end of file
+diff --git a/bookstore/order/models/order.py b/bookstore/order/models/order.py
+index 7c57401..9aa6d96 100644
+--- a/bookstore/order/models/order.py
++++ b/bookstore/order/models/order.py
+@@ -1,9 +1,11 @@
+-from django.contrib.auth.models import User
+ from django.db import models
++from django.contrib.auth.models import User
++from product.models.product import Product
++
++
+ 
+-from product.models import Product
+ 
+ 
+-class Order(models.Model):
+-    product = models.ManyToManyField(Product, blank=False)
++class Order (models.Model):
++    product = models.ManyToManyField(Product , blank=False)
+     user = models.ForeignKey(User, on_delete=models.CASCADE)
+\ No newline at end of file
+diff --git a/bookstore/order/serializers/__init__.py b/bookstore/order/serializers/__init__.py
+deleted file mode 100644
+index e7396e1..0000000
+--- a/bookstore/order/serializers/__init__.py
++++ /dev/null
+@@ -1 +0,0 @@
+-from .order_serializer import OrderSerializer
+diff --git a/bookstore/order/serializers/order_serializer.py b/bookstore/order/serializers/order_serializer.py
+index a5a62cd..23d2918 100644
+--- a/bookstore/order/serializers/order_serializer.py
++++ b/bookstore/order/serializers/order_serializer.py
+@@ -1,15 +1,10 @@
+ from rest_framework import serializers
+ 
+-from order.models import Order
+ from product.models import Product
+ from product.serializers.product_serializer import ProductSerializer
+ 
+-
+ class OrderSerializer(serializers.ModelSerializer):
+-    product = ProductSerializer(read_only=True, many=True)
+-    products_id = serializers.PrimaryKeyRelatedField(
+-        queryset=Product.objects.all(), write_only=True, many=True
+-    )
++    product = ProductSerializer(required=True, many=True)
+     total = serializers.SerializerMethodField()
+ 
+     def get_total(self, instance):
+@@ -17,16 +12,5 @@ class OrderSerializer(serializers.ModelSerializer):
+         return total
+ 
+     class Meta:
+-        model = Order
+-        fields = ["product", "total", "user", "products_id"]
+-        extra_kwargs = {"product": {"required": False}}
+-
+-    def create(self, validated_data):
+-        product_data = validated_data.pop("products_id")
+-        user_data = validated_data.pop("user")
+-
+-        order = Order.objects.create(user=user_data)
+-        for product in product_data:
+-            order.product.add(product)
+-
+-        return order
+\ No newline at end of file
++        model = Product
++        fields = ['product', 'total']
+\ No newline at end of file
+diff --git a/bookstore/order/tests.py b/bookstore/order/tests.py
+new file mode 100644
+index 0000000..7ce503c
+--- /dev/null
++++ b/bookstore/order/tests.py
+@@ -0,0 +1,3 @@
++from django.test import TestCase
++
++# Create your tests here.
+diff --git a/bookstore/order/tests/__init__.py b/bookstore/order/tests/__init__.py
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/bookstore/order/tests/test_serializers/__init__.py b/bookstore/order/tests/test_serializers/__init__.py
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/bookstore/order/tests/test_serializers/test_order_serializer.py b/bookstore/order/tests/test_serializers/test_order_serializer.py
+index dca14b2..6ed1588 100644
+--- a/bookstore/order/tests/test_serializers/test_order_serializer.py
++++ b/bookstore/order/tests/test_serializers/test_order_serializer.py
+@@ -1,5 +1,3 @@
+-#!/usr/bin/env python
+-# -*- coding: utf-8 -*-
+ from django.test import TestCase
+ 
+ from order.factories import OrderFactory, ProductFactory
+@@ -16,7 +14,7 @@ class TestOrderSerializer(TestCase):
+ 
+     def test_order_serializer(self):
+         serializer_data = self.order_serializer.data
+-        self.assertEquals(
++        self.assertEqual(
+             serializer_data["product"][0]["title"], self.product_1.title)
+-        self.assertEquals(
+-            serializer_data["product"][1]["title"], self.product_2.title)
+\ No newline at end of file
++        self.assertEqual(
++            serializer_data["product"][1]["title"], self.product_2.title)
+diff --git a/bookstore/order/tests/test_viewsets/__init__.py b/bookstore/order/tests/test_viewsets/__init__.py
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/bookstore/order/tests/test_viewsets/test_order_viewset.py b/bookstore/order/tests/test_viewsets/test_order_viewset.py
+deleted file mode 100644
+index eb3cf24..0000000
+--- a/bookstore/order/tests/test_viewsets/test_order_viewset.py
++++ /dev/null
+@@ -1,58 +0,0 @@
+-import json
+-
+-from django.urls import reverse
+-from rest_framework import status
+-from rest_framework.test import APIClient, APITestCase
+-
+-from order.factories import OrderFactory, UserFactory
+-from order.models import Order
+-from product.factories import CategoryFactory, ProductFactory
+-from product.models import Product
+-
+-
+-class TestOrderViewSet(APITestCase):
+-
+-    client = APIClient()
+-
+-    def setUp(self):
+-        self.category = CategoryFactory(title="technology")
+-        self.product = ProductFactory(
+-            title="mouse", price=100, category=[self.category]
+-        )
+-        self.order = OrderFactory(product=[self.product])
+-
+-    def test_order(self):
+-        response = self.client.get(
+-            reverse("order-list", kwargs={"version": "v1"}))
+-
+-        self.assertEqual(response.status_code, status.HTTP_200_OK)
+-
+-        order_data = json.loads(response.content)
+-        self.assertEqual(
+-            order_data["results"][0]["product"][0]["title"], self.product.title
+-        )
+-        self.assertEqual(
+-            order_data["results"][0]["product"][0]["price"], self.product.price
+-        )
+-        self.assertEqual(
+-            order_data["results"][0]["product"][0]["active"], self.product.active
+-        )
+-        self.assertEqual(
+-            order_data["results"][0]["product"][0]["category"][0]["title"],
+-            self.category.title,
+-        )
+-
+-    def test_create_order(self):
+-        user = UserFactory()
+-        product = ProductFactory()
+-        data = json.dumps({"products_id": [product.id], "user": user.id})
+-
+-        response = self.client.post(
+-            reverse("order-list", kwargs={"version": "v1"}),
+-            data=data,
+-            content_type="application/json",
+-        )
+-
+-        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+-
+-        created_order = Order.objects.get(user=user)
+\ No newline at end of file
+diff --git a/bookstore/order/urls.py b/bookstore/order/urls.py
+deleted file mode 100644
+index bd97313..0000000
+--- a/bookstore/order/urls.py
++++ /dev/null
+@@ -1,16 +0,0 @@
+-#!/usr/bin/env python
+-# -*- coding: utf-8 -*-
+-
+-
+-from django.urls import include, path
+-from rest_framework import routers
+-
+-from order import viewsets
+-
+-router = routers.SimpleRouter()
+-router.register(r"order", viewsets.OrderViewSet, basename="order")
+-
+-
+-urlpatterns = [
+-    path("", include(router.urls)),
+-]
+\ No newline at end of file
+diff --git a/bookstore/order/views.py b/bookstore/order/views.py
+deleted file mode 100644
+index 91ea44a..0000000
+--- a/bookstore/order/views.py
++++ /dev/null
+@@ -1,3 +0,0 @@
+-from django.shortcuts import render
+-
+-# Create your views here.
+diff --git a/bookstore/order/viewsets/__init__.py b/bookstore/order/viewsets/__init__.py
+deleted file mode 100644
+index 0b4e286..0000000
+--- a/bookstore/order/viewsets/__init__.py
++++ /dev/null
+@@ -1 +0,0 @@
+-from .order_viewset import OrderViewSet
+diff --git a/bookstore/order/viewsets/order_viewset.py b/bookstore/order/viewsets/order_viewset.py
+deleted file mode 100644
+index 190985b..0000000
+--- a/bookstore/order/viewsets/order_viewset.py
++++ /dev/null
+@@ -1,10 +0,0 @@
+-from rest_framework.viewsets import ModelViewSet
+-
+-from order.models import Order
+-from order.serializers import OrderSerializer
+-
+-
+-class OrderViewSet(ModelViewSet):
+-
+-    serializer_class = OrderSerializer
+-    queryset = Order.objects.all().order_by("id")
+\ No newline at end of file
+diff --git a/bookstore/placeholder.txt b/bookstore/placeholder.txt
+deleted file mode 100644
+index c3a4ebe..0000000
+--- a/bookstore/placeholder.txt
++++ /dev/null
+@@ -1 +0,0 @@
+-# Placeholder file
+diff --git a/bookstore/poetry.lock b/bookstore/poetry.lock
+index fa192cc..2544a2c 100644
+--- a/bookstore/poetry.lock
++++ b/bookstore/poetry.lock
+@@ -49,21 +49,6 @@ tzdata = {version = "*", markers = "sys_platform == \"win32\""}
+ argon2 = ["argon2-cffi (>=19.1.0)"]
+ bcrypt = ["bcrypt"]
+ 
+-[[package]]
+-name = "django-extensions"
+-version = "3.2.3"
+-description = "Extensions for Django"
+-optional = false
+-python-versions = ">=3.6"
+-groups = ["main"]
+-files = [
+-    {file = "django-extensions-3.2.3.tar.gz", hash = "sha256:44d27919d04e23b3f40231c4ab7af4e61ce832ef46d610cc650d53e68328410a"},
+-    {file = "django_extensions-3.2.3-py3-none-any.whl", hash = "sha256:9600b7562f79a92cbf1fde6403c04fee314608fefbb595502e34383ae8203401"},
+-]
+-
+-[package.dependencies]
+-Django = ">=3.2"
+-
+ [[package]]
+ name = "django-rest-framework"
+ version = "0.1.0"
+@@ -219,4 +204,4 @@ files = [
+ [metadata]
+ lock-version = "2.1"
+ python-versions = ">=3.13"
+-content-hash = "bd417d1b4ca6c0a22e5a9dfa8aab6970010525402a54b2812bc4a4227964694a"
++content-hash = "91860fa6bec19e96bc0894b3b1b71aa13ab07f3f751de0f014c7fbd0957f650a"
+diff --git a/bookstore/product/__init__.py b/bookstore/product/__init__.py
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/bookstore/product/admin.py b/bookstore/product/admin.py
+deleted file mode 100644
+index 2aa9429..0000000
+--- a/bookstore/product/admin.py
++++ /dev/null
+@@ -1,5 +0,0 @@
+-from django.contrib import admin
+-
+-# Register your models here.
+-
+-from .models import Product, Category
+diff --git a/bookstore/product/apps.py b/bookstore/product/apps.py
+deleted file mode 100644
+index c86dab3..0000000
+--- a/bookstore/product/apps.py
++++ /dev/null
+@@ -1,6 +0,0 @@
+-from django.apps import AppConfig
+-
+-
+-class ProductConfig(AppConfig):
+-    default_auto_field = "django.db.models.BigAutoField"
+-    name = "product"
+diff --git a/bookstore/product/factories.py b/bookstore/product/factories.py
+index 6178910..f1415fc 100644
+--- a/bookstore/product/factories.py
++++ b/bookstore/product/factories.py
+@@ -1,22 +1,24 @@
+ import factory
+ 
+-from product.models import Category, Product
+-
++from product.models import Product
++from product.models import Category
+ 
+ class CategoryFactory(factory.django.DjangoModelFactory):
+-    title = factory.Faker("pystr")
+-    slug = factory.Faker("pystr")
+-    description = factory.Faker("pystr")
++    title = factory.Faker('pystr')
++    slug = factory.Faker('pystr')
++    description = factory.Faker('pystr')
+     active = factory.Iterator([True, False])
+ 
+     class Meta:
+         model = Category
+ 
+-
+ class ProductFactory(factory.django.DjangoModelFactory):
+-    price = factory.Faker("pyint")
++    price = factory.Faker('pyint')
+     category = factory.LazyAttribute(CategoryFactory)
+-    title = factory.Faker("pystr")
++    title = factory.Faker('pystr')
++
++    class Meta:
++        model = Product
+ 
+     @factory.post_generation
+     def category(self, create, extracted, **kwargs):
+@@ -26,6 +28,5 @@ class ProductFactory(factory.django.DjangoModelFactory):
+         if extracted:
+             for category in extracted:
+                 self.category.add(category)
+-
+     class Meta:
+-        model = Product
++         model = Product
+diff --git a/bookstore/product/migrations/0001_initial.py b/bookstore/product/migrations/0001_initial.py
+deleted file mode 100644
+index 6907dc8..0000000
+--- a/bookstore/product/migrations/0001_initial.py
++++ /dev/null
+@@ -1,56 +0,0 @@
+-# Generated by Django 5.1.7 on 2025-03-12 01:27
+-
+-from django.db import migrations, models
+-
+-
+-class Migration(migrations.Migration):
+-
+-    initial = True
+-
+-    dependencies = []
+-
+-    operations = [
+-        migrations.CreateModel(
+-            name="Category",
+-            fields=[
+-                (
+-                    "id",
+-                    models.BigAutoField(
+-                        auto_created=True,
+-                        primary_key=True,
+-                        serialize=False,
+-                        verbose_name="ID",
+-                    ),
+-                ),
+-                ("title", models.CharField(max_length=100)),
+-                ("slug", models.SlugField(unique=True)),
+-                (
+-                    "description",
+-                    models.CharField(blank=True, max_length=200, null=True),
+-                ),
+-                ("active", models.BooleanField(default=True)),
+-            ],
+-        ),
+-        migrations.CreateModel(
+-            name="Product",
+-            fields=[
+-                (
+-                    "id",
+-                    models.BigAutoField(
+-                        auto_created=True,
+-                        primary_key=True,
+-                        serialize=False,
+-                        verbose_name="ID",
+-                    ),
+-                ),
+-                ("title", models.CharField(max_length=100)),
+-                (
+-                    "description",
+-                    models.TextField(blank=True, max_length=500, null=True),
+-                ),
+-                ("price", models.PositiveIntegerField(null=True)),
+-                ("active", models.BooleanField(default=True)),
+-                ("category", models.ManyToManyField(blank=True, to="product.category")),
+-            ],
+-        ),
+-    ]
+diff --git a/bookstore/product/migrations/__init__.py b/bookstore/product/migrations/__init__.py
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/bookstore/product/models/__init__.py b/bookstore/product/models/__init__.py
+deleted file mode 100644
+index e8cb39c..0000000
+--- a/bookstore/product/models/__init__.py
++++ /dev/null
+@@ -1,2 +0,0 @@
+-from .category import Category
+-from .product import Product
+\ No newline at end of file
+diff --git a/bookstore/product/models/category.py b/bookstore/product/models/category.py
+index 3db286c..2b5d1a1 100644
+--- a/bookstore/product/models/category.py
++++ b/bookstore/product/models/category.py
+@@ -1,14 +1,10 @@
+-#!/usr/bin/env python
+-# -*- coding: utf-8 -*-
+-
+ from django.db import models
+ 
+-
+ class Category(models.Model):
+     title = models.CharField(max_length=100)
+     slug = models.SlugField(unique=True)
+     description = models.CharField(max_length=200, blank=True, null=True)
+     active = models.BooleanField(default=True)
+ 
+-    def __str__(self):
+-        return self.title
++    def __unicode__(self):
++        return self.title
+\ No newline at end of file
+diff --git a/bookstore/product/models/product.py b/bookstore/product/models/product.py
+index 544abfa..2b807e3 100644
+--- a/bookstore/product/models/product.py
++++ b/bookstore/product/models/product.py
+@@ -1,10 +1,10 @@
+-#!/usr/bin/env python
+-# -*- coding: utf-8 -*-
+-
+ 
+ from django.db import models
+ 
+-from product.models import Category
++from .category import Category
++
++
++
+ 
+ 
+ class Product(models.Model):
+@@ -15,6 +15,3 @@ class Product(models.Model):
+     category = models.ManyToManyField(Category, blank=True)
+ 
+ 
+-    def __str__(self):
+-        return self.title
+-      
+diff --git a/bookstore/product/serializers/__init__.py b/bookstore/product/serializers/__init__.py
+index c6af765..1236164 100644
+--- a/bookstore/product/serializers/__init__.py
++++ b/bookstore/product/serializers/__init__.py
+@@ -1,5 +1,2 @@
+-#!/usr/bin/env python
+-# -*- coding: utf-8 -*-
+-
+-from .category_serializer import CategorySerializer
+-from .product_serializer import ProductSerializer
+\ No newline at end of file
++from .product_serializer import ProductSerializer
++from .category_serializer import CategorySerializer
+\ No newline at end of file
+diff --git a/bookstore/product/serializers/category_serializer.py b/bookstore/product/serializers/category_serializer.py
+index 8bb2167..f80b2e7 100644
+--- a/bookstore/product/serializers/category_serializer.py
++++ b/bookstore/product/serializers/category_serializer.py
+@@ -2,14 +2,12 @@ from rest_framework import serializers
+ 
+ from product.models.category import Category
+ 
+-
+ class CategorySerializer(serializers.ModelSerializer):
+     class Meta:
+         model = Category
+         fields = [
+-            "title",
+-            "slug",
+-            "description",
+-            "active",
++            'title',
++            'slug',
++            'description',
++            'active',
+         ]
+-        extra_kwargs = {"slug": {"required": False}}
+\ No newline at end of file
+diff --git a/bookstore/product/serializers/product_serializer.py b/bookstore/product/serializers/product_serializer.py
+index 54834bd..cba0c61 100644
+--- a/bookstore/product/serializers/product_serializer.py
++++ b/bookstore/product/serializers/product_serializer.py
+@@ -1,32 +1,17 @@
+ from rest_framework import serializers
+ 
+-from product.models.product import Category, Product
++from product.models.product import Product
+ from product.serializers.category_serializer import CategorySerializer
+ 
+-
+ class ProductSerializer(serializers.ModelSerializer):
+-    category = CategorySerializer(read_only=True, many=True)
+-    categories_id = serializers.PrimaryKeyRelatedField(
+-        queryset=Category.objects.all(), write_only=True, many=True
+-    )
++    category = CategorySerializer(required=True, many=True)
+ 
+     class Meta:
+         model = Product
+         fields = [
+-            "id",
+-            "title",
+-            "description",
+-            "price",
+-            "active",
+-            "category",
+-            "categories_id",
++            'title',
++            'description',
++            'price',
++            'active',
++            'category',
+         ]
+-
+-    def create(self, validated_data):
+-        category_data = validated_data.pop("categories_id")
+-
+-        product = Product.objects.create(**validated_data)
+-        for category in category_data:
+-            product.category.add(category)
+-
+-        return product
+\ No newline at end of file
+diff --git a/bookstore/product/tests.py b/bookstore/product/tests.py
+new file mode 100644
+index 0000000..7ce503c
+--- /dev/null
++++ b/bookstore/product/tests.py
+@@ -0,0 +1,3 @@
++from django.test import TestCase
++
++# Create your tests here.
+diff --git a/bookstore/product/tests/__init__.py b/bookstore/product/tests/__init__.py
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/bookstore/product/tests/test_serializers/__init__.py b/bookstore/product/tests/test_serializers/__init__.py
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/bookstore/product/tests/test_serializers/test_category_serializer.py b/bookstore/product/tests/test_serializers/test_category_serializer.py
+index ffd907d..f79b26f 100644
+--- a/bookstore/product/tests/test_serializers/test_category_serializer.py
++++ b/bookstore/product/tests/test_serializers/test_category_serializer.py
+@@ -12,4 +12,4 @@ class TestCategorySerializer(TestCase):
+     def test_order_serializer(self):
+         serializer_data = self.category_serializer.data
+ 
+-        self.assertEquals(serializer_data["title"], "food")
+\ No newline at end of file
++        self.assertEqual(serializer_data["title"], "food")
+diff --git a/bookstore/product/tests/test_serializers/test_product_serializer.py b/bookstore/product/tests/test_serializers/test_product_serializer.py
+index 9e5ddf9..2073f14 100644
+--- a/bookstore/product/tests/test_serializers/test_product_serializer.py
++++ b/bookstore/product/tests/test_serializers/test_product_serializer.py
+@@ -14,7 +14,8 @@ class TestProductSerializer(TestCase):
+ 
+     def test_product_serializer(self):
+         serializer_data = self.product_serializer.data
+-        self.assertEquals(serializer_data["price"], 100)
+-        self.assertEquals(serializer_data["title"], "mouse")
+-        self.assertEquals(
+-            serializer_data["category"][0]["title"], "technology")
++        self.assertEqual(serializer_data["price"], 100)  
++        self.assertEqual(serializer_data["title"], "mouse")  
++        self.assertEqual(
++            serializer_data["category"][0]["title"], "technology"   
++        )
+diff --git a/bookstore/product/tests/test_viewsets/__init__.py b/bookstore/product/tests/test_viewsets/__init__.py
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/bookstore/product/tests/test_viewsets/test_category_viewset.py b/bookstore/product/tests/test_viewsets/test_category_viewset.py
+deleted file mode 100644
+index 5a7d755..0000000
+--- a/bookstore/product/tests/test_viewsets/test_category_viewset.py
++++ /dev/null
+@@ -1,40 +0,0 @@
+-import json
+-
+-from django.urls import reverse
+-from rest_framework.test import APIClient, APITestCase
+-from rest_framework.views import status
+-
+-from product.factories import CategoryFactory
+-from product.models import Category
+-
+-
+-class CategoryViewSet(APITestCase):
+-    client = APIClient()
+-
+-    def setUp(self):
+-        self.category = CategoryFactory(title="books")
+-
+-    def test_get_all_category(self):
+-        response = self.client.get(
+-            reverse("category-list", kwargs={"version": "v1"}))
+-
+-        self.assertEqual(response.status_code, status.HTTP_200_OK)
+-        category_data = json.loads(response.content)
+-
+-        self.assertEqual(category_data["results"]
+-                         [0]["title"], self.category.title)
+-
+-    def test_create_category(self):
+-        data = json.dumps({"title": "technology"})
+-
+-        response = self.client.post(
+-            reverse("category-list", kwargs={"version": "v1"}),
+-            data=data,
+-            content_type="application/json",
+-        )
+-
+-        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+-
+-        created_category = Category.objects.get(title="technology")
+-
+-        self.assertEqual(created_category.title, "technology")
+diff --git a/bookstore/product/tests/test_viewsets/test_product_viewset.py b/bookstore/product/tests/test_viewsets/test_product_viewset.py
+deleted file mode 100644
+index c5301f9..0000000
+--- a/bookstore/product/tests/test_viewsets/test_product_viewset.py
++++ /dev/null
+@@ -1,63 +0,0 @@
+-import json
+-
+-from django.urls import reverse
+-from rest_framework.authtoken.models import Token
+-from rest_framework.test import APIClient, APITestCase
+-from rest_framework.views import status
+-
+-from order.factories import UserFactory
+-from product.factories import CategoryFactory, ProductFactory
+-from product.models import Product
+-
+-
+-class TestProductViewSet(APITestCase):
+-    client = APIClient()
+-
+-    def setUp(self):
+-        self.user = UserFactory()
+-        token = Token.objects.create(user=self.user)  # added
+-        token.save()  # added
+-
+-        self.product = ProductFactory(
+-            title="pro controller",
+-            price=200.00,
+-        )
+-
+-    def test_get_all_product(self):
+-        token = Token.objects.get(user__username=self.user.username)  # added
+-        self.client.credentials(
+-            HTTP_AUTHORIZATION="Token " + token.key)  # added
+-        response = self.client.get(
+-            reverse("product-list", kwargs={"version": "v1"}))
+-
+-        self.assertEqual(response.status_code, status.HTTP_200_OK)
+-        product_data = json.loads(response.content)
+-
+-        self.assertEqual(product_data["results"]
+-                         [0]["title"], self.product.title)
+-        self.assertEqual(product_data["results"]
+-                         [0]["price"], self.product.price)
+-        self.assertEqual(product_data["results"]
+-                         [0]["active"], self.product.active)
+-
+-    def test_create_product(self):
+-        token = Token.objects.get(user__username=self.user.username)
+-        self.client.credentials(HTTP_AUTHORIZATION="Token " + token.key)
+-        category = CategoryFactory()
+-        data = json.dumps(
+-            {"title": "notebook", "price": 800.00,
+-                "categories_id": [category.id]}
+-        )
+-
+-        response = self.client.post(
+-            reverse("product-list", kwargs={"version": "v1"}),
+-            data=data,
+-            content_type="application/json",
+-        )
+-
+-        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+-
+-        created_product = Product.objects.get(title="notebook")
+-
+-        self.assertEqual(created_product.title, "notebook")
+-        self.assertEqual(created_product.price, 800.00)
+diff --git a/bookstore/product/urls.py b/bookstore/product/urls.py
+deleted file mode 100644
+index 028c904..0000000
+--- a/bookstore/product/urls.py
++++ /dev/null
+@@ -1,15 +0,0 @@
+-#!/usr/bin/env python
+-# -*- coding: utf-8 -*-
+-
+-from django.urls import include, path
+-from rest_framework import routers
+-
+-from product import viewsets
+-
+-router = routers.SimpleRouter()
+-router.register(r"product", viewsets.ProductViewSet, basename="product")
+-router.register(r"category", viewsets.CategoryViewSet, basename="category")
+-
+-urlpatterns = [
+-    path("", include(router.urls)),
+-]
+\ No newline at end of file
+diff --git a/bookstore/product/views.py b/bookstore/product/views.py
+deleted file mode 100644
+index 91ea44a..0000000
+--- a/bookstore/product/views.py
++++ /dev/null
+@@ -1,3 +0,0 @@
+-from django.shortcuts import render
+-
+-# Create your views here.
+diff --git a/bookstore/product/viewsets/__init__.py b/bookstore/product/viewsets/__init__.py
+deleted file mode 100644
+index 61a8ed7..0000000
+--- a/bookstore/product/viewsets/__init__.py
++++ /dev/null
+@@ -1,3 +0,0 @@
+-
+-from .category_viewset import CategoryViewSet
+-from .product_viewset import ProductViewSet
+\ No newline at end of file
+diff --git a/bookstore/product/viewsets/category_viewset.py b/bookstore/product/viewsets/category_viewset.py
+deleted file mode 100644
+index bdf85d2..0000000
+--- a/bookstore/product/viewsets/category_viewset.py
++++ /dev/null
+@@ -1,11 +0,0 @@
+-from rest_framework.viewsets import ModelViewSet
+-
+-from product.models import Category
+-from product.serializers.category_serializer import CategorySerializer
+-
+-
+-class CategoryViewSet(ModelViewSet):
+-    serializer_class = CategorySerializer
+-
+-    def get_queryset(self):
+-        return Category.objects.all().order_by("id")
+\ No newline at end of file
+diff --git a/bookstore/product/viewsets/product_viewset.py b/bookstore/product/viewsets/product_viewset.py
+deleted file mode 100644
+index 1c7524b..0000000
+--- a/bookstore/product/viewsets/product_viewset.py
++++ /dev/null
+@@ -1,11 +0,0 @@
+-from rest_framework.viewsets import ModelViewSet
+-
+-from product.models import Product
+-from product.serializers.product_serializer import ProductSerializer
+-
+-
+-class ProductViewSet(ModelViewSet):
+-    serializer_class = ProductSerializer
+-
+-    def get_queryset(self):
+-        return Product.objects.all().order_by("id")
+\ No newline at end of file
+diff --git a/bookstore/pyproject.toml b/bookstore/pyproject.toml
+index 233bb6b..f1f94b2 100644
+--- a/bookstore/pyproject.toml
++++ b/bookstore/pyproject.toml
+@@ -12,8 +12,7 @@ dependencies = [
+     "factory-boy (>=3.3.3,<4.0.0)",
+     "django (>=5.1.7,<6.0.0)",
+     "djangorestframework (>=3.15.2,<4.0.0)",
+-    "django-rest-framework (>=0.1.0,<0.2.0)",
+-    "django-extensions (>=3.2.3,<4.0.0)"
++    "django-rest-framework (>=0.1.0,<0.2.0)"
+ ]
+ 
+ 
